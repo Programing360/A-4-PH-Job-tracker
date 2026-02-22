@@ -136,14 +136,13 @@
             products used by millions of users worldwide.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
+            id="interview-btn"
             class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -177,14 +176,13 @@
             portfolio and experience with modern web design trends.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            id="interview-btn"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -220,14 +218,13 @@
             skills: D3.js, React, and strong analytical thinking.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            id="interview-btn"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -261,14 +258,13 @@
             Work with modern DevOps practices and cloud infrastructure.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            id="interview-btn"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -303,14 +299,13 @@
             required.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            id="interview-btn"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -345,14 +340,13 @@
             professional development opportunities.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            id="interview-btn"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -387,14 +381,13 @@
             equity package included.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            id="interview-btn"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
@@ -431,34 +424,42 @@
             with a talented team on cutting-edge projects.
           </p>
           <button
-            onclick="handleIncreaseInterview()"
-            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2]"
+            class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
           >
             INTERVIEW
           </button>
           <button
-            onclick="handleIncreaseRejected()"
-            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
+            class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2] btn-rejected"
           >
             REJECTED
           </button>
         </div>
       </section>
-      <section>
-        <div class="border p-10 text-center hidden">
-          <img src="" alt="" />
-          <h1>No jobs available</h1>
-          <p>Check back soon for new job opportunities</p>
-        </div>
-      </section>
+      <section></section>
       <!-- Interview section -->
       <section id="interview-section" class="">
-        <h1>interview</h1>
+        <div id="interview-job-cart" class="p-10 text-center bg-white mt-4 job-cart">
+          <img class="mx-auto" src="./assest/assignment_7959593 1.png" alt="" />
+          <h1 class="text-[24px] font-semibold text-[#002C5C]">
+            No jobs available
+          </h1>
+          <p class="text-[16px] text-gray-400">
+            Check back soon for new job opportunities
+          </p>
+        </div>
       </section>
 
       <!-- Rejected section -->
-      <section id="rejected-section" class="" >
-        <h1>Rejected</h1>
+      <section id="rejected-section" class="">
+        <div id="rejected-job-cart" class="p-10 text-center bg-white mt-4 job-cart">
+          <img class="mx-auto" src="./assest/assignment_7959593 1.png" alt="" />
+          <h1 class="text-[24px] font-semibold text-[#002C5C]">
+            No jobs available
+          </h1>
+          <p class="text-[16px] text-gray-400">
+            Check back soon for new job opportunities
+          </p>
+        </div>
       </section>
     </main>
 
