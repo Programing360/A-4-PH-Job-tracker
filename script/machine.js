@@ -26,7 +26,7 @@ function showAllSection(id) {
   interviewBtn.classList.remove("bg-[#3B82F6]", "text-white");
   // console.log('click-all')
 }
-
+// const allJob = document.getElementById('all-job')
 function showInterviewSection(id) {
   // get all section id
   const allSection = document.getElementById("all-section");
@@ -53,7 +53,21 @@ function showInterviewSection(id) {
   allBtn.classList.remove("bg-[#3B82F6]", "text-white");
   const rejectedBtn = document.getElementById("rejected-btn");
   rejectedBtn.classList.remove("bg-[#3B82F6]", "text-white");
-  // console.log('click-all')
+  // console.log('click-all')'
+
+  //   remove empty job card
+  const targetInterview = document.getElementById("interview-section");
+  const jobCart = document.getElementById("interview-job-cart");
+
+  if (targetInterview.querySelector(".child")) {
+    jobCart.classList.add("hidden");
+  } else{
+    jobCart.classList.remove("hidden");
+  }
+  //     const jobCart = document.getElementById("interview-job-cart");
+  //     jobCart.classList.remove("hidden");
+
+  //   console.log(targetInterview.querySelector(".child"));
 }
 
 function showRejectedSection(id) {
@@ -82,5 +96,13 @@ function showRejectedSection(id) {
   allBtn.classList.remove("bg-[#3B82F6]", "text-white");
   const interviewBtn = document.getElementById("interview-btn");
   interviewBtn.classList.remove("bg-[#3B82F6]", "text-white");
-  // console.log('click-all')
+  //   remove empty job card
+  const rejectedJobCart = document.getElementById("rejected-job-cart");
+  rejectedJobCart.classList.remove("hidden");
+
+  const targetInterview = document.getElementById("rejected-section");
+  if (targetInterview.children[1]) {
+    const jobCart = document.getElementById("rejected-job-cart");
+    jobCart.classList.add("hidden");
+  }
 }

@@ -1,100 +1,104 @@
-// // get id from dashboard count
-// const rejectedCount = document.getElementById("interview-rejected");
-
-// const prevInterviewCounted = document.getElementById("interview-selected");
-
-// let totalRejected = 0;
-// function handleRejected() {
-//     // increase Rejected count
-//   let rejectedValue = Number(rejectedCount.innerText);
-//   rejectedCount.innerText = rejectedValue + 1;
-
-//   //   decrease Interview count
-//   let interviewValue = Number(prevInterviewCounted.innerText);
-//   if (interviewValue > 0) {
-//     prevInterviewCounted.innerText = interviewValue - 1;
-//   }
-//   // set inverview collection and increase count when click the interview btn
-//   const stasusElement = document.querySelector(".not-applied", ".applied");
-
-//   const newP = document.createElement("p");
-//   newP.innerText = "REJECTED";
-//   newP.classList =
-//     "w-35 px-3 py-3 text-center rounded-lg bg-red-400 text-white applied";
-//   stasusElement.replaceWith(newP);
-
-//   const rejectedSection = document.getElementById("rejected-section");
-//   const newRejetedCollection = document.createElement("div");
-//   newRejetedCollection.innerHTML = `
-//     <div class="bg-[#ffffff] p-4 mt-4 rounded-lg">
-//           <div class="my-5 flex justify-between items-center">
-//             <div>
-//               <h1 class="text-[18px] font-semibold text-[#002C5C]">
-//                 Mobile First Corp
-//               </h1>
-//               <p class="text-[16px] text-[#64748B]">React Native Developer</p>
-//             </div>
-//             <div>
-//               <span
-//                 class="material-symbols-outlined shadow rounded-full p-2 cursor-pointer active:scale-75"
-//               >
-//                 delete
-//               </span>
-//             </div>
-//           </div>
-//           <p class="text-[14px] text-[#64748B] mb-4">
-//             Remote • Full-time • $130,000 - $175,000
-//           </p>
-//           <p
-//             class="w-35 px-3 py-3 text-center rounded-lg bg-red-400 not-applied"
-//           >
-//             REJECTED
-//           </p>
-//           <p class="text-[14px] text-[#323B49] mb-5 mt-2">
-//             Build cross-platform mobile applications using React Native. Work on
-//             products used by millions of users worldwide.
-//           </p>
-//           <button
-//             onclick="handleIncreaseInterview()"
-//             class="btn text-green-400 border-green-400 hover:bg-[#e2e2e2] btn-interview"
-//           >
-//             INTERVIEW
-//           </button>
-//           <button
-//             onclick="handleRejected()"
-//             class="btn text-red-400 border-red-400 hover:bg-[#e2e2e2]"
-//           >
-//             REJECTED
-//           </button>
-//         </div>
-//   `;
-//   rejectedSection.appendChild(newRejetedCollection);
-// }
-
 const rejectedCount = document.getElementById("interview-rejected");
-
+const interviewCounts = document.getElementById("interview-selected");
 const targetRejected = document.getElementById("rejected-section");
+const targetInterviews = document.getElementById("interview-section");
+
 document.querySelectorAll(".btn-rejected").forEach((btn) => {
   btn.addEventListener("click", function () {
-    console.log('hello')
-    // set inverview collection and increase count when click the interview btn
-    const notApplied = document.querySelector(".not-applied");
-    const newP = document.createElement("p");
-    newP.innerText = "REJECTED";
-    newP.classList =
-      "w-35 px-3 py-3 text-center rounded-lg bg-red-400 text-white applied";
-    notApplied.replaceWith(newP);
-
-    // Add another card
     const card = this.closest(".child");
-    const copyCode = card.cloneNode(true);
-    targetRejected.appendChild(copyCode);
 
-    // count
-    const rejectedValue = Number(interviewCount.innerText);
-    rejectedCount.innerText = rejectedValue + 1;
+    // set inverview collection and increase count when click the interview btn
+    const status = card.querySelector(".not-applied");
+    if (status) {
+      status.innerText = "REJECTED";
+      status.classList =
+        "w-35 px-3 py-3 text-center rounded-lg bg-red-400 text-white applied";
 
-   const jobCart = document.getElementById('rejected-job-cart')
-    jobCart.classList.add('hidden')
+      // Add another card
+      const copyCode = card.cloneNode(true);
+      targetRejected.appendChild(copyCode);
+
+      // count
+      let rejectedValue = Number(rejectedCount.innerText);
+      rejectedCount.innerText = rejectedValue + 1;
+    }
+
+    const jobCart = document.getElementById("rejected-job-cart");
+    jobCart.classList.add("hidden");
+
+    document
+      .getElementById("rejected-section")
+      .addEventListener("click", function (e) {
+        const card = e.target.closest(".child");
+        if (!card) return;
+
+        const status = card.querySelector(".not-applied, .applied");
+        if (e.target.classList.contains("btn-rejected")) {
+          if (status) {
+            status.innerText = "REJECTED";
+            status.classList =
+              "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white ";
+          }
+          targetRejected.appendChild(card);
+        }
+        if (e.target.classList.contains("btn-interview")) {
+          if (status) {
+            status.innerText = "INTERVIEW";
+            status.classList =
+              "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white ";
+          }
+          target.appendChild(card);
+
+          // job card count 
+          let interviewValue = Number((interviewCount.innerText) +1);
+          interviewCount.innerText = interviewValue;
+
+          let rejectedValue = Number((rejectedCount.innerText) -1);
+          rejectedCount.innerText = rejectedValue;
+
+          // hide and show empty job list card
+          const targetInterview = document.getElementById("rejected-section");
+          const jobCart = document.getElementById("rejected-job-cart");
+
+          if (targetInterview.querySelector(".child")) {
+            jobCart.classList.add("hidden");
+          } else {
+            jobCart.classList.remove("hidden");
+          }
+        }
+      });
+    document
+      .getElementById("interview-section")
+      .addEventListener("click", function (e) {
+        const card = e.target.closest(".child");
+        if (!card) return;
+
+        const status = card.querySelector(".not-applied, .applied");
+        if (e.target.classList.contains("btn-rejected")) {
+          if (status) {
+            status.innerText = "REJECTED";
+            status.classList =
+              "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white ";
+          }
+
+          targetRejected.appendChild(card);
+
+          // job card count 
+          let interviewValues = Number((interviewCounts.innerText) -1);
+          interviewCounts.innerText = interviewValues;
+
+          let rejectedValue = Number((rejectedCount.innerText) + 1);
+          rejectedCount.innerText = rejectedValue;
+
+          const targetInterview = document.getElementById("interview-section");
+          const jobCart = document.getElementById("interview-job-cart");
+
+          if (targetInterview.querySelector(".child")) {
+            jobCart.classList.add("hidden");
+          } else {
+            jobCart.classList.remove("hidden");
+          }
+        }
+      });
   });
 });
