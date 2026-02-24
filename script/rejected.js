@@ -19,54 +19,54 @@ document.querySelectorAll(".btn-rejected").forEach((btn) => {
       targetRejected.appendChild(copyCode);
 
       // count
-      let rejectedValue = Number(rejectedCount.innerText);
-      rejectedCount.innerText = rejectedValue + 1;
+      let rejectedValue = Number(rejectedCount.innerText) +1;
+      rejectedCount.innerText = rejectedValue;
     }
 
     const jobCart = document.getElementById("rejected-job-cart");
     jobCart.classList.add("hidden");
 
-    document
-      .getElementById("rejected-section")
-      .addEventListener("click", function (e) {
-        const card = e.target.closest(".child");
-        if (!card) return;
+    // document
+    //   .getElementById("rejected-section")
+    //   .addEventListener("click", function (e) {
+    //     const card = e.target.closest(".child");
+    //     if (!card) return;
 
-        const status = card.querySelector(".not-applied, .applied");
-        if (e.target.classList.contains("btn-rejected")) {
-          if (status) {
-            status.innerText = "REJECTED";
-            status.classList =
-              "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white ";
-          }
-          targetRejected.appendChild(card);
-        }
-        if (e.target.classList.contains("btn-interview")) {
-          if (status) {
-            status.innerText = "INTERVIEW";
-            status.classList =
-              "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white ";
-          }
-          target.appendChild(card);
+    //     const status = card.querySelector(".not-applied, .applied");
+    //     if (e.target.classList.contains("btn-rejected")) {
+    //       if (status) {
+    //         status.innerText = "REJECTED";
+    //         status.classList =
+    //           "w-35 px-3 py-3 text-center rounded-lg bg-red-400 text-white applied";
+    //       }
+    //       targetRejected.appendChild(card);
+    //     }
+    //     if (e.target.classList.contains("btn-interview")) {
+    //       if (status) {
+    //         status.innerText = "INTERVIEW";
+    //         status.classList =
+    //           "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white not-applied";
+    //       }
+    //       target.appendChild(card);
 
-          // job card count 
-          let interviewValue = Number((interviewCount.innerText) +1);
-          interviewCount.innerText = interviewValue;
+    //       // job card count 
+    //       let interviewValue = Number(interviewCount.innerText) +1;
+    //       interviewCount.innerText = interviewValue;
 
-          let rejectedValue = Number((rejectedCount.innerText) -1);
-          rejectedCount.innerText = rejectedValue;
+    //       let rejectedValue = Number(rejectedCount.innerText) -1;
+    //       rejectedCount.innerText = rejectedValue;
 
-          // hide and show empty job list card
-          const targetInterview = document.getElementById("rejected-section");
-          const jobCart = document.getElementById("rejected-job-cart");
+    //       // hide and show empty job list card
+    //       const targetInterview = document.getElementById("rejected-section");
+    //       const jobCart = document.getElementById("rejected-job-cart");
 
-          if (targetInterview.querySelector(".child")) {
-            jobCart.classList.add("hidden");
-          } else {
-            jobCart.classList.remove("hidden");
-          }
-        }
-      });
+    //       if (targetInterview.querySelector(".child")) {
+    //         jobCart.classList.add("hidden");
+    //       } else {
+    //         jobCart.classList.remove("hidden");
+    //       }
+    //     }
+    //   });
     document
       .getElementById("interview-section")
       .addEventListener("click", function (e) {
@@ -78,16 +78,16 @@ document.querySelectorAll(".btn-rejected").forEach((btn) => {
           if (status) {
             status.innerText = "REJECTED";
             status.classList =
-              "w-35 px-3 py-3 text-center rounded-lg bg-green-400 text-white ";
+              "w-35 px-3 py-3 text-center rounded-lg bg-red-400 text-white applied";
           }
 
           targetRejected.appendChild(card);
 
           // job card count 
-          let interviewValues = Number((interviewCounts.innerText) -1);
+          let interviewValues = Number(interviewCounts.innerText) -1;
           interviewCounts.innerText = interviewValues;
 
-          let rejectedValue = Number((rejectedCount.innerText) + 1);
+          let rejectedValue = Number(rejectedCount.innerText) + 1;
           rejectedCount.innerText = rejectedValue;
 
           const targetInterview = document.getElementById("interview-section");

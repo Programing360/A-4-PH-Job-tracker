@@ -61,13 +61,11 @@ function showInterviewSection(id) {
 
   if (targetInterview.querySelector(".child")) {
     jobCart.classList.add("hidden");
-  } else{
+  } else {
     jobCart.classList.remove("hidden");
   }
-  //     const jobCart = document.getElementById("interview-job-cart");
-  //     jobCart.classList.remove("hidden");
-
-  //   console.log(targetInterview.querySelector(".child"));
+  
+  
 }
 
 function showRejectedSection(id) {
