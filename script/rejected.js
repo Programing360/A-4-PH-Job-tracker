@@ -19,7 +19,7 @@ document.querySelectorAll(".btn-rejected").forEach((btn) => {
       targetRejected.appendChild(copyCode);
 
       // count
-      let rejectedValue = Number(rejectedCount.innerText) +1;
+      let rejectedValue = Number(rejectedCount.innerText) + 1;
       rejectedCount.innerText = rejectedValue;
     }
 
@@ -49,7 +49,7 @@ document.querySelectorAll(".btn-rejected").forEach((btn) => {
     //       }
     //       target.appendChild(card);
 
-    //       // job card count 
+    //       // job card count
     //       let interviewValue = Number(interviewCount.innerText) +1;
     //       interviewCount.innerText = interviewValue;
 
@@ -67,38 +67,6 @@ document.querySelectorAll(".btn-rejected").forEach((btn) => {
     //       }
     //     }
     //   });
-    document
-      .getElementById("interview-section")
-      .addEventListener("click", function (e) {
-        const card = e.target.closest(".child");
-        if (!card) return;
-
-        const status = card.querySelector(".not-applied, .applied");
-        if (e.target.classList.contains("btn-rejected")) {
-          if (status) {
-            status.innerText = "REJECTED";
-            status.classList =
-              "w-35 px-3 py-3 text-center rounded-lg bg-red-400 text-white applied";
-          }
-
-          targetRejected.appendChild(card);
-
-          // job card count 
-          let interviewValues = Number(interviewCounts.innerText) -1;
-          interviewCounts.innerText = interviewValues;
-
-          let rejectedValue = Number(rejectedCount.innerText) + 1;
-          rejectedCount.innerText = rejectedValue;
-
-          const targetInterview = document.getElementById("interview-section");
-          const jobCart = document.getElementById("interview-job-cart");
-
-          if (targetInterview.querySelector(".child")) {
-            jobCart.classList.add("hidden");
-          } else {
-            jobCart.classList.remove("hidden");
-          }
-        }
-      });
   });
 });
+
