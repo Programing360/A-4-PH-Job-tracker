@@ -16,6 +16,8 @@ function showAllSection(id) {
   const showAllSection = document.getElementById(id);
   showAllSection.classList.remove("hidden");
 
+  const allJobsCount = document.getElementById("all-job");
+  allJobsCount.classList.remove("hidden");
   // set bg-color
   const allBtn = document.getElementById("all-btn");
   allBtn.classList.add("bg-[#3B82F6]", "text-white");
@@ -26,6 +28,8 @@ function showAllSection(id) {
   interviewBtn.classList.remove("bg-[#3B82F6]", "text-white");
   // console.log('click-all')
 }
+const name = 'rakib'
+name = 'tutul'
 // const allJob = document.getElementById('all-job')
 function showInterviewSection(id) {
   // get all section id
@@ -54,7 +58,10 @@ function showInterviewSection(id) {
   const rejectedBtn = document.getElementById("rejected-btn");
   rejectedBtn.classList.remove("bg-[#3B82F6]", "text-white");
   // console.log('click-all')'
-
+  // document.createElement(div)
+  const allJobsCount = document.getElementById("all-job");
+  allJobsCount.classList.add("hidden");
+  // allJobsCount.innerText = allJobsCount.innerText.replace(8, 0)
   //   remove empty job card
   const targetInterview = document.getElementById("interview-section");
   const jobCart = document.getElementById("interview-job-cart");
@@ -64,8 +71,6 @@ function showInterviewSection(id) {
   } else {
     jobCart.classList.remove("hidden");
   }
-  
-  
 }
 
 function showRejectedSection(id) {
